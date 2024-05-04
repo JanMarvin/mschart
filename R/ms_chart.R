@@ -585,7 +585,7 @@ format.ms_chart <- function(x, id_x, id_y, sheetname = "sheet1", drop_ext_data =
     str_,
     axis_str,
     table_str,
-    sppr_str
+    sppr_str,
     "</c:plotArea>"
   )
   xml_doc <- read_xml(system.file(package = "mschart", "template", "chart.xml"))

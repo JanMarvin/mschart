@@ -1,6 +1,7 @@
 clustered_pos <- c("ctr", "inBase", "inEnd", "outEnd")
 stacked_pos <- c("ctr", "inBase", "inEnd")
 
+#' @keywords internal
 to_pml.ms_barchart <- function(x, id_x, id_y, sheetname = "sheet1", add_ns = FALSE, secondary_y = 0, ...){
 
   if( "clustered" %in% x$options$grouping )
@@ -69,6 +70,8 @@ to_pml.ms_barchart <- function(x, id_x, id_y, sheetname = "sheet1", add_ns = FAL
 }
 
 standard_pos <- c("b", "ctr", "l", "r", "t")
+
+#' @keywords internal
 to_pml.ms_linechart <- function(x, id_x, id_y, sheetname = "sheet1", add_ns = FALSE, secondary_y = 0, ...){
 
   if( !x$label_settings$position %in% standard_pos ){
@@ -137,7 +140,7 @@ to_pml.ms_linechart <- function(x, id_x, id_y, sheetname = "sheet1", add_ns = FA
                   "</c:lineChart>"  )
 }
 
-
+#' @keywords internal
 to_pml.ms_areachart <- function(x, id_x, id_y, sheetname = "sheet1", add_ns = FALSE, secondary_y = 0, ...){
 
   series <- as_series(
@@ -191,6 +194,7 @@ names(has_markers) <- scatterstyles
 has_lines <- c(FALSE, TRUE, TRUE, FALSE, TRUE, TRUE)
 names(has_lines) <- scatterstyles
 
+#' @keywords internal
 to_pml.ms_scatterchart <- function(x, id_x, id_y, sheetname = "sheet1", add_ns = FALSE, asis = FALSE, secondary_y = 0, ...){
 
   if( !x$label_settings$position %in% standard_pos ){
